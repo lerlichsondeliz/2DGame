@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3010a244cc79140829b0246b0ec74772
+guid: 77ec6c7f534f44d6b99398efb2994e40
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 661499269124453984
-    second: unityGrass_0
+      213: 2101877910992606284
+    second: unityGrass 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unityGrass_0
+      name: unityGrass 2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 066f75b941e1e2900800000000000000
-      internalID: 661499269124453984
+      spriteID: c4454f5e2de5b2d10800000000000000
+      internalID: 2101877910992606284
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      unityGrass_0: 661499269124453984
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

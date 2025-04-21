@@ -47,6 +47,7 @@ public class UI : MonoBehaviour
     public void startGame() {
        // for testing button functionality 
         Debug.Log("starting :P");
+        Level.firstLevel();
     }
 
     public void showOptions() {
@@ -68,7 +69,6 @@ public class UI : MonoBehaviour
         if (helpMenu != null) {
             helpMenu.SetActive(true);
         }
-        Debug.Log("showHelp() finished");
     }
 
     public void soundFunc() {

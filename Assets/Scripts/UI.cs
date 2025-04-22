@@ -50,6 +50,7 @@ public class UI : MonoBehaviour
     public void startGame() {
        // for testing button functionality 
         Debug.Log("starting :P");
+        SceneManager.LoadScene("Level1");
         //Level.firstLevel();
     }
 

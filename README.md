@@ -14,5 +14,8 @@ UML : https://drive.google.com/file/d/1ncaVr--bm-6ZlyibmiD9ZZYybruYmCEM/view?usp
 Trello Board: https://trello.com/b/cIPeSPxo/cs345-trello-dev6
 
 # Sprint 2
-doc: https://docs.google.com/document/d/1TONnDUjtv5yFl8jSOo2wNyt_QlUEoWZvD6t3tHA47vY/edit?usp=sharing The goal of this sprint was to combine our individiual work to demonstrate starting the game. Integrating player movement into the UI in place was crucial.
+review doc: https://docs.google.com/document/d/1TONnDUjtv5yFl8jSOo2wNyt_QlUEoWZvD6t3tHA47vY/edit?usp=sharing 
+The goal of this sprint was to combine our individiual work to demonstrate starting the game. 
+Integrating player movement into the UI in place was crucial.
+retrospective: https://docs.google.com/document/d/1B2oLj7do2nMbk6ZOLBaE8mjv9HcX_RO7l-6ViINlZpM/edit?usp=sharing 
 

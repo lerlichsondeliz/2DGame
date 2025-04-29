@@ -68,7 +68,7 @@ public class UI : MonoBehaviour
             menu.SetActive(false);
         }  
         if (optionsMenu != null) {
-            optionsMenu.SetActive(true);        // Show options menu
+            optionsMenu.SetActive(true);        // show options menu
             currentMenu = optionsMenu; 
             help.onClick.AddListener(showHelp);
             sound.onClick.AddListener(soundFunc);
@@ -121,7 +121,7 @@ public class UI : MonoBehaviour
 
     public void music(bool isMusicOn) {
         Debug.Log("music toggle: " + isMusicOn);
-       if (musicAudioSource != null) //  <- Change 'music' to 'musicAudioSource'
+       if (musicAudioSource != null) 
         {
             musicAudioSource.mute = !isMusicOn;
         }

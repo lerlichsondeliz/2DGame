@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     public GameObject menu;
     public GameObject optionsMenu;
     public GameObject helpMenu;
+    public GameObject soundMenu;
     private GameObject currentMenu;
     public Button start;
     public Button options;
@@ -18,6 +19,8 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI gameTitleText;
     public Image backgroundImage;
     public TMP_FontAsset outdoorFont;
+    public Toggle musicToggle;
+    public AudioSource musicAudioSource;
     
     
 
@@ -44,6 +47,11 @@ public class UI : MonoBehaviour
         start.onClick.AddListener(startGame);
         options.onClick.AddListener(showOptions);
         resume.onClick.AddListener(resumeLevel);
+
+        if (musicToggle != null)
+        {
+            musicToggle.onValueChanged.AddListener(music);
+        }
         
     }
 
@@ -56,7 +64,9 @@ public class UI : MonoBehaviour
 
     public void showOptions() {
         Debug.Log("options menu");
-        if (menu != null) menu.SetActive(false); // Hide main menu for options menu 
+        if (menu != null)  {
+            menu.SetActive(false);
+        }  
         if (optionsMenu != null) {
             optionsMenu.SetActive(true);        // Show options menu
             currentMenu = optionsMenu; 
@@ -73,13 +83,20 @@ public class UI : MonoBehaviour
         }
         if (helpMenu != null) {
             helpMenu.SetActive(true);
-            currentMenu = optionsMenu; 
+            currentMenu = helpMenu; 
         }
         back.onClick.AddListener(goBack);
     }
 
     public void soundFunc() {
         Debug.Log("beep music beep");
+        if (optionsMenu != null) {
+            optionsMenu.SetActive(false);
+        }
+        if (soundMenu != null) {
+            soundMenu.SetActive(true);
+            currentMenu = soundMenu; 
+        }
         back.onClick.AddListener(goBack);
     }
 
@@ -88,15 +105,25 @@ public class UI : MonoBehaviour
     }
 
     public void goBack() {
-        if (currentMenu == optionsMenu) {
-            currentMenu = menu;
-            optionsMenu.SetActive(false);
-            menu.SetActive(true);
+        if (currentMenu != optionsMenu) {
+            currentMenu = optionsMenu;
+            optionsMenu.SetActive(true);
+            soundMenu.SetActive(false);
+            helpMenu.SetActive(false);
         }
         else {
-            currentMenu = optionsMenu;
-            helpMenu.SetActive(false);
-            optionsMenu.SetActive(true);
+            currentMenu = menu;
+            menu.SetActive(true);
+            optionsMenu.SetActive(false);
+        }
+    
+    }
+
+    public void music(bool isMusicOn) {
+        Debug.Log("music toggle: " + isMusicOn);
+       if (musicAudioSource != null) //  <- Change 'music' to 'musicAudioSource'
+        {
+            musicAudioSource.mute = !isMusicOn;
         }
     }
 }        

@@ -77,14 +77,18 @@ Trello Board: https://trello.com/b/cIPeSPxo/cs345-trello-dev6
 ## Sprints
 
 ### Sprint 1
+The goal of this sprint was to solidify our decision on choosing Unity. We focused on learning multiple aspects of Unity to prepare to develop the game. This involved watching various YouTube videos and reading many tutorials before we got started. Besides this, we tried to create the basic structure of the game so we knew who was working on which parts of the code and how they would eventually integrate. 
+Review Demo Agenda: https://docs.google.com/document/d/1nz75Ch4d96c-VDQd1J2JRroPqshpdW890klqvkXe2ZM/edit?usp=sharing
+Retrospective: https://docs.google.com/document/d/1C2R-O7aRh_ApHQor9Q0XHqWTXbbHZOP9rFDyVG4meWs/edit?tab=t.0
 
 ### Sprint 2
-Review doc: https://docs.google.com/document/d/1TONnDUjtv5yFl8jSOo2wNyt_QlUEoWZvD6t3tHA47vY/edit?usp=sharing 
 The goal of this sprint was to combine our individual work to demonstrate starting the game. 
 Integrating player movement into the UI in place was crucial.
-retrospective: https://docs.google.com/document/d/1B2oLj7do2nMbk6ZOLBaE8mjv9HcX_RO7l-6ViINlZpM/edit?usp=sharing 
+Review Demo Agenda: https://docs.google.com/document/d/1TONnDUjtv5yFl8jSOo2wNyt_QlUEoWZvD6t3tHA47vY/edit?usp=sharing
+Retrospective: https://docs.google.com/document/d/1B2oLj7do2nMbk6ZOLBaE8mjv9HcX_RO7l-6ViINlZpM/edit?usp=sharing 
 
 ## Kanban
+During the Kanban, the main goal was to put together all the work everyone did individually. 
 
 ## Contributions
 - Lukas: Weapon Class and Enemy Class, Player Health.

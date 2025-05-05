@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 304536602}
   - component: {fileID: 304536603}
   m_Layer: 0
-  m_Name: SwordDown 2
+  m_Name: SwordHit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430441901}
   m_Layer: 0
-  m_Name: SwordTempUp
+  m_Name: SwordUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 457043791}
   m_Layer: 0
-  m_Name: SwordTempRight
+  m_Name: SwordRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1956362758}
-  - {fileID: 1684885773}
   m_Father: {fileID: 667516942}
   m_LocalEulerAnglesHint: {x: -1, y: -1, z: 180}
 --- !u!1 &667516941
@@ -814,7 +813,7 @@ GameObject:
   - component: {fileID: 917182791}
   - component: {fileID: 917182793}
   m_Layer: 0
-  m_Name: SwordDown
+  m_Name: SwordHit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,7 +1033,7 @@ GameObject:
   - component: {fileID: 1094205973}
   - component: {fileID: 1094205974}
   m_Layer: 0
-  m_Name: SwordDown
+  m_Name: SwordHit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,75 +1127,6 @@ RectTransform:
   m_AnchoredPosition: {x: 9.199997, y: -1.1000004}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1330876355
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1330876356}
-  - component: {fileID: 1330876357}
-  m_Layer: 0
-  m_Name: SwordDown 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1330876356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330876355}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.0000018747526, y: 0.00000017601998, z: -0.691623, w: 0.7222586}
-  m_LocalPosition: {x: 30.551361, y: 0.98183304, z: 21.763744}
-  m_LocalScale: {x: 0.83842856, y: 0.6884557, z: 0.7597427}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1759155109}
-  m_LocalEulerAnglesHint: {x: -1, y: -1, z: -87.5}
---- !u!70 &1330876357
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330876355}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -15.2, y: -48.5}
-  m_Size: {x: 30.1, y: 15.7}
-  m_Direction: 1
 --- !u!1 &1346087542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1138,7 @@ GameObject:
   - component: {fileID: 1346087543}
   - component: {fileID: 1346087544}
   m_Layer: 0
-  m_Name: SwordDown 2
+  m_Name: SwordHit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1704,7 +1634,7 @@ GameObject:
   - component: {fileID: 1619248348}
   - component: {fileID: 1619248349}
   m_Layer: 0
-  m_Name: SwordDown
+  m_Name: SwordHit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1853,75 +1783,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1684885772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1684885773}
-  - component: {fileID: 1684885774}
-  m_Layer: 0
-  m_Name: SwordDown 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1684885773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684885772}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.0000018747526, y: 0.00000017601998, z: -0.691623, w: 0.7222586}
-  m_LocalPosition: {x: 30.551361, y: 0.98183304, z: 21.763744}
-  m_LocalScale: {x: 0.83842856, y: 0.6884557, z: 0.7597427}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 457043791}
-  m_LocalEulerAnglesHint: {x: -1, y: -1, z: -87.5}
---- !u!70 &1684885774
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684885772}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -15.2, y: -48.5}
-  m_Size: {x: 30.1, y: 15.7}
-  m_Direction: 1
 --- !u!1 &1759155108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,7 +1793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759155109}
   m_Layer: 0
-  m_Name: SwordTempLeft
+  m_Name: SwordLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1952,7 +1813,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1094205973}
-  - {fileID: 1330876356}
   m_Father: {fileID: 667516942}
   m_LocalEulerAnglesHint: {x: -1, y: -1, z: 180}
 --- !u!1 &1843124321
@@ -2204,7 +2064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952014973}
   m_Layer: 0
-  m_Name: SwordTempDown
+  m_Name: SwordDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,7 +2098,7 @@ GameObject:
   - component: {fileID: 1956362758}
   - component: {fileID: 1956362759}
   m_Layer: 0
-  m_Name: SwordDown
+  m_Name: SwordHit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

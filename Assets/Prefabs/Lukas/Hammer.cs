@@ -3,14 +3,29 @@ using System.Collections;
 
 public class Hammer : Weapon
 {
+    public enum PlayerID { Player1, Player2 }
+    public PlayerID owner = PlayerID.Player1;
+
     public float innerRange = 1f;
     public float outerRange = 2f;
     public float outerDamageMultiplier = 0.5f;
     public float stunDuration = 1.5f;
 
+    private void Update()
+    {
+        if (owner == PlayerID.Player1 && Input.GetKeyDown(KeyCode.E))
+        {
+            Attack();
+        }
+        else if (owner == PlayerID.Player2 && Input.GetKeyDown(KeyCode.O))
+        {
+            Attack();
+        }
+    }
+
     public override void Attack()
     {
-        Debug.Log("Hammer attack triggered!");
+        Debug.Log(owner + " hammer attack triggered!");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, outerRange);
 

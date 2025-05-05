@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public Transform player;
+    private Transform[] players;
+    protected Transform targetPlayer;
+
     public float speed = 3f;
     public float attackRange = 1.5f;
     public float attackCooldown = 1f;
@@ -20,7 +23,6 @@ public abstract class Enemy : MonoBehaviour
 
     public float flashDuration = 0.2f;
 
-    // --- Stun fields ---
     private bool isStunned = false;
     private float stunEndTime = 0f;
 
@@ -30,6 +32,10 @@ public abstract class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
         currentHealth = maxHealth;
+
+        players = GameObject.FindGameObjectsWithTag("Player")
+                            .Select(go => go.transform)
+                            .ToArray();
     }
 
     protected virtual void Update()
@@ -42,14 +48,16 @@ public abstract class Enemy : MonoBehaviour
             }
             else
             {
-                rb.linearVelocity = Vector2.zero; // Stop moving while stunned
-                return; // Skip actions while stunned
+                rb.linearVelocity = Vector2.zero;
+                return;
             }
         }
 
-        if (player == null) return;
+        UpdateTargetPlayer();
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        if (targetPlayer == null) return;
+
+        float distanceToPlayer = Vector2.Distance(transform.position, targetPlayer.position);
 
         if (Time.time >= lastAttackTime + attackCooldown)
         {
@@ -64,9 +72,30 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    private void UpdateTargetPlayer()
+    {
+        float minDistance = float.MaxValue;
+        Transform closest = null;
+
+        foreach (var p in players)
+        {
+            if (p == null) continue;
+            float dist = Vector2.Distance(transform.position, p.position);
+            if (dist < minDistance)
+            {
+                minDistance = dist;
+                closest = p;
+            }
+        }
+
+        targetPlayer = closest;
+    }
+
     protected void MoveTowardsPlayer()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
+        if (targetPlayer == null) return;
+
+        Vector2 direction = (targetPlayer.position - transform.position).normalized;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1.5f, obstacleMask);
         if (hit.collider != null)
@@ -95,9 +124,13 @@ public abstract class Enemy : MonoBehaviour
 
     private IEnumerator FlashRed()
     {
+        if (spriteRenderer == null) yield break;
+
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(flashDuration);
-        spriteRenderer.color = originalColor;
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = originalColor;
     }
 
     protected virtual void Die()
@@ -106,7 +139,6 @@ public abstract class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // --- Called by weapons to apply stun ---
     public void Stun(float duration)
     {
         isStunned = true;

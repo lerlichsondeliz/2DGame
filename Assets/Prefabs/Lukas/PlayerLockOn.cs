@@ -34,17 +34,17 @@ public class PlayerLockOn : MonoBehaviour
             sword.gameObject.SetActive(false);
         }
 
-        // Lock onto closest enemy
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LockOnToEnemy();
-        }
+        // // Lock onto closest enemy
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     LockOnToEnemy();
+        // }
 
-        // Unlock from current target
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UnlockTarget();
-        }
+        // // Unlock from current target
+        // if (Input.GetKeyDown(KeyCode.U))
+        // {
+        //     UnlockTarget();
+        // }
     }
 
     private void LockOnToEnemy()

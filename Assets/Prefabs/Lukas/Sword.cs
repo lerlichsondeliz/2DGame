@@ -8,8 +8,12 @@ public class Sword : Weapon
     public override void Attack()
     {
         Debug.Log("Sword attack triggered!");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        if (anim != null)
+        {
+            anim.SetTrigger("Attack"); // Make sure "Attack" Trigger exists in Animator
+        }
 
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange);
         foreach (Collider2D enemyCollider in hitEnemies)
         {
             if (enemyCollider.CompareTag("Enemy"))
@@ -27,5 +31,11 @@ public class Sword : Weapon
                 }
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

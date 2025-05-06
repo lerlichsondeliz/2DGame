@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fad1636f0c2204ea9ce8d3c7ed9065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 0}
-  hammer: {fileID: 0}
+  sword: {fileID: 1362352561}
+  hammer: {fileID: 485603687}
   player2EquipAndAttackSword: 117
   player2EquipAndAttackHammer: 111
 --- !u!1 &324996631
@@ -275,8 +275,8 @@ Transform:
   m_GameObject: {fileID: 482347483}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42, y: -115, z: -432.00003}
-  m_LocalScale: {x: 4.8, y: 4.8, z: 4.8}
+  m_LocalPosition: {x: 26, y: -115, z: -432.00003}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1020404640}
@@ -315,11 +315,11 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: -2}
-    oldSize: {x: 0.6666667, y: 0.6}
+    oldSize: {x: 2, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4814177023604e1aa828f9ed689e957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 20
   attackRange: 1.5
   attackCooldown: 1
   obstacleMask:
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 485603687}
   m_Layer: 0
   m_Name: Hammer (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Hammer
-  damage: 0
+  damage: 10
   attackRate: 1
   target: {fileID: 0}
   lockOnRange: 5
@@ -590,12 +590,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1478274235272143641, guid: 8affa1f3796d64a4da46459799f1d7ce, type: 3}
+  m_Sprite: {fileID: -2619527012426255043, guid: 416db01ee9a2942eeb59519e115a5de5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14, y: 0.29}
+  m_Size: {x: 0.12, y: 0.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667516941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41987512ddfdb204496b61d196cae1eb, type: 3}
   m_Name: 
@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 736090740}
   - component: {fileID: 736090741}
   - component: {fileID: 736090742}
+  - component: {fileID: 736090743}
   m_Layer: 0
   m_Name: player2
   m_TagString: Player
@@ -886,6 +887,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed2: 5
+--- !u!95 &736090743
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736090734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a101bfdf60f374374b87783fdbdc81cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1020404636
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +923,7 @@ GameObject:
   - component: {fileID: 1020404637}
   - component: {fileID: 1020404641}
   - component: {fileID: 1020404642}
+  - component: {fileID: 1020404643}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -986,9 +1010,9 @@ RectTransform:
   - {fileID: 736090735}
   - {fileID: 1844426004}
   - {fileID: 1843124325}
-  - {fileID: 482347484}
   - {fileID: 1416311535}
   - {fileID: 1631859994}
+  - {fileID: 482347484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1038,6 +1062,103 @@ MonoBehaviour:
   player1Health: {fileID: 667516947}
   player2Health: {fileID: 736090740}
   exitGame: {fileID: 1843124322}
+--- !u!82 &1020404643
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020404636}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7276987241ab74dcfb35aa94c8003284, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7276987241ab74dcfb35aa94c8003284, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1315641686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1207,7 @@ GameObject:
   - component: {fileID: 1362352561}
   m_Layer: 0
   m_Name: Sword (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1119,9 +1240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: 
-  damage: 0
+  damage: 30
   attackRate: 1
-  target: {fileID: 0}
+  target: {fileID: 482347484}
   lockOnRange: 5
   attackRange: 1.5
   knockbackForce: 20
@@ -1626,7 +1747,7 @@ RectTransform:
   m_GameObject: {fileID: 1631859993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 66.8883, y: 49.23655, z: 1.070391}
+  m_LocalScale: {x: 71.06882, y: 57.852943, z: 1.070391}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1020404640}
@@ -1703,7 +1824,7 @@ GameObject:
   - component: {fileID: 1657051013}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1736,9 +1857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sword
-  damage: 0
+  damage: 20
   attackRate: 1
-  target: {fileID: 0}
+  target: {fileID: 482347484}
   lockOnRange: 5
   attackRange: 1.5
   knockbackForce: 20
@@ -1993,7 +2114,7 @@ GameObject:
   - component: {fileID: 1936663068}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2026,7 +2147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Hammer
-  damage: 0
+  damage: 10
   attackRate: 1
   target: {fileID: 0}
   lockOnRange: 5

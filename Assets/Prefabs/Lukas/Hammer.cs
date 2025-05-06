@@ -11,21 +11,14 @@ public class Hammer : Weapon
     public float outerDamageMultiplier = 0.5f;
     public float stunDuration = 1.5f;
 
-    private void Update()
-    {
-        if (owner == PlayerID.Player1 && Input.GetKeyDown(KeyCode.E))
-        {
-            Attack();
-        }
-        else if (owner == PlayerID.Player2 && Input.GetKeyDown(KeyCode.O))
-        {
-            Attack();
-        }
-    }
-
     public override void Attack()
     {
         Debug.Log(owner + " hammer attack triggered!");
+
+        if (anim != null)
+        {
+            anim.SetBool("isAttacking", true); // Use bool instead of trigger for blend tree
+        }
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, outerRange);
 
@@ -52,9 +45,11 @@ public class Hammer : Weapon
                 }
             }
         }
+
+        StartCoroutine(ResetAttackAnimation()); // Reset after delay
     }
 
-    public IEnumerator FlashRed(Enemy enemy)
+    private IEnumerator FlashRed(Enemy enemy)
     {
         SpriteRenderer sr = enemy.GetComponent<SpriteRenderer>();
         if (sr != null)
@@ -66,10 +61,19 @@ public class Hammer : Weapon
         }
     }
 
-    public IEnumerator StunEnemy(Enemy enemy, float duration)
+    private IEnumerator StunEnemy(Enemy enemy, float duration)
     {
         enemy.Stun(duration);
         yield return null;
+    }
+
+    private IEnumerator ResetAttackAnimation()
+    {
+        yield return new WaitForSeconds(0.2f); // Adjust based on animation length
+        if (anim != null)
+        {
+            anim.SetBool("isAttacking", false);
+        }
     }
 
     private void OnDrawGizmosSelected()

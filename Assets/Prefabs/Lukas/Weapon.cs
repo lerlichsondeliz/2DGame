@@ -5,17 +5,21 @@ public abstract class Weapon : MonoBehaviour
     public string weaponName;
     public int damage;
     public float attackRate = 1f;
-    public Transform target; // The enemy this weapon is currently locked onto
-    public float lockOnRange = 5f; // Range to find enemies for lock-on
+    public Transform target;
+    public float lockOnRange = 5f;
 
+    protected Animator anim;
     private float lastAttackTime = 0f;
+
+    protected virtual void Start()
+    {
+        anim = GetComponentInParent<Animator>();
+    }
 
     protected virtual void Update()
     {
-        // Automatically find and lock on to the closest enemy
         AutoLockTarget();
 
-        // Perform attack if there's a target and cooldown is met
         if (target != null && Time.time >= lastAttackTime + attackRate)
         {
             Attack();
@@ -23,19 +27,14 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    // Abstract method for the actual attack logic in derived classes
     public abstract void Attack();
 
-    // Automatically locks on to the closest enemy in range
     private void AutoLockTarget()
     {
-        // Get all enemies in range
         Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, lockOnRange, LayerMask.GetMask("Enemy"));
-
         float closestDistance = Mathf.Infinity;
         Transform closestEnemy = null;
 
-        // Find the closest enemy in range
         foreach (var enemyCollider in enemiesInRange)
         {
             float distance = Vector2.Distance(transform.position, enemyCollider.transform.position);
@@ -46,23 +45,12 @@ public abstract class Weapon : MonoBehaviour
             }
         }
 
-        // Set the closest enemy as the target
         target = closestEnemy;
     }
 
-    // Lock onto a specific enemy
-    public void LockOnTarget(Transform newTarget)
-    {
-        target = newTarget;
-    }
+    public void LockOnTarget(Transform newTarget) => target = newTarget;
+    public void UnlockTarget() => target = null;
 
-    // Unlock the current enemy
-    public void UnlockTarget()
-    {
-        target = null;
-    }
-
-    // Optional: Visualize the lock-on range in the Scene view
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
